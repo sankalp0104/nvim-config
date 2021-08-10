@@ -14,9 +14,6 @@ Plug 'mbbill/undotree'
 Plug 'matze/vim-move'
 " Format c++ codes
 Plug 'rhysd/vim-clang-format'
-" Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 " Format python codes
 Plug 'sbdchd/neoformat'
 " Match Brackets
@@ -62,7 +59,22 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
+" For Go
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Minimap like vs-code or sublime
+Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
+" Fugitive
+Plug 'tpope/vim-fugitive'
+" SuperTab
+Plug 'ervandew/supertab'
+" cool icons, minimalist statusbar and tabs
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
+" startify
+Plug 'mhinz/vim-startify'
+" To show git changes
+Plug 'mhinz/vim-signify'
 
 call plug#end()
 
@@ -70,6 +82,13 @@ lua require("lets_talk")
 
 syntax enable
 set t_Co=256
+
+" set notermguicolors
+" let g:gruvbox_contrast_dark='medium'
+" colorscheme gruvbox
+" set background=dark
+" lua require('telescope').setup { defaults = { winblend = 0 } }
+
 set termguicolors
 colorscheme dracula
 
