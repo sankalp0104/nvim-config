@@ -1,10 +1,10 @@
 " Maps
 let mapleader = " "
+nnoremap <leader><Cr> <Esc>:w<cr>
 
 nnoremap <Leader><space> :so ~/.config/nvim/init.vim<CR>
 map <leader>vi :tabnew ~/.config/nvim/init.vim <cr>
 map <leader>la :tabnew ~/.config/nvim/lua/lets_talk/init.lua <cr>
-nnoremap <leader><Cr> <Esc>:w<cr>
 
 
 nnoremap <Leader>+ :vertical resize +10<CR>
@@ -19,7 +19,8 @@ inoremap kj <Esc>:w<Cr>
 inoremap jj <Esc>:w<Cr>
 inoremap kk <Esc>:w<Cr>
 
-" Leader 
+nnoremap <silent>ZZ :wqa<CR>
+nnoremap <silent>ZL :qa!<CR>
 
 " Move between Splits
 nnoremap <C-h> <C-w>h
@@ -34,11 +35,11 @@ nnoremap <leader>Y gg"+yG
 
 " For plugins
 nnoremap <leader>u :UndotreeToggle<CR>
-nnoremap <leader>h :Cheat<Space>
-nnoremap <leader>c :ClangFormat<cr>
-nnoremap <leader>m :MaximizerToggle<CR>
+nnoremap <leader>ch :Cheat<Space>
+nnoremap <leader>cl :ClangFormat<cr>
+nnoremap <leader>ma :MaximizerToggle<CR>
+nnoremap <leader>mp :MinimapToggle<CR>
 nnoremap <leader>tb :TagbarToggle<cr>
-
 
 " Switch between tabs
 nnoremap <C-Right> gt<cr>
@@ -58,8 +59,9 @@ inoremap \shrug ¯\_(ツ)_/¯
 nnoremap <leader>o o<Esc>0D
 nnoremap <leader>O O<Esc>0D
 
+" I hate using <c-w> to delete previous word, I want to involve backspace but
+" somehow <c-bs> doesn't seem to work
 inoremap <A-BS> <C-W>
-nnoremap <leader>, T,c,
 
 " Open Terminal in a split
 nnoremap <A-t> :vs <cr>:terminal <cr>
@@ -87,7 +89,7 @@ nnoremap <leader>z <cmd>!cp template.cpp %<cr><cr>
 
 " Harpoon
 nnoremap <leader>ha <cmd>lua require("harpoon.mark").add_file()<cr>
-nnoremap <leader>hm <cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>
+nnoremap <leader>hp <cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>
 
 " FloatTerm
 nnoremap   <silent>   <A-x>    :FloatermKill<CR>
@@ -103,3 +105,28 @@ tnoremap   <silent>   <A-x>    <C-\><C-n>:FloatermKill<CR>
 " endfunction
 "
 " nnoremap <silent> <C-c> :call ToggleQuickFix()
+
+
+" Better Copy
+nnoremap Y y$
+
+" Better navigation
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo break-points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap [ [<c-g>u
+inoremap ? ?<c-g>u
+
+" Lets try something new
+nnoremap ; :
+vnoremap ; :
+nnoremap : ;
+vnoremap : ;
+
+" Go directly below and ignore blank lines
+nnoremap <silent> gj :let _=&lazyredraw<CR>:set lazyredraw<CR>/\%<C-R>=virtcol(".")<CR>v\S<CR>:nohl<CR>:let &lazyredraw=_<CR>
+nnoremap <silent> gk :let _=&lazyredraw<CR>:set lazyredraw<CR>?\%<C-R>=virtcol(".")<CR>v\S<CR>:nohl<CR>:let &lazyredraw=_<CR>
