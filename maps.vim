@@ -95,18 +95,6 @@ nnoremap <leader>hp <cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>
 nnoremap   <silent>   <A-x>    :FloatermKill<CR>
 tnoremap   <silent>   <A-x>    <C-\><C-n>:FloatermKill<CR>
 
-
-" function! ToggleQuickFix()
-"     if empty(filter(getwininfo(), 'v:val.quickfix'))
-"         copen
-"     else
-"         cclose
-"     endif
-" endfunction
-"
-" nnoremap <silent> <C-c> :call ToggleQuickFix()
-
-
 " Better Copy
 nnoremap Y y$
 
