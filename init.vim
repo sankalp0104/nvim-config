@@ -2,8 +2,6 @@ set nocompatible
 filetype on
 filetype plugin on
 
-syntax on
-
 
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -24,8 +22,6 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 " Maximizer
 Plug 'szw/vim-maximizer'
-" Neoterm
-Plug 'kassio/neoterm'
 " Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Cheat Sheet
@@ -34,9 +30,6 @@ Plug 'dbeniamine/cheat.sh-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ayu-theme/ayu-vim' 
-Plug 'google/vim-colorscheme-primary'
-Plug 'altercation/vim-colors-solarized'
 " Tree-sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -45,9 +38,6 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-" Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" Harpoon
-Plug 'ThePrimeagen/harpoon'
 "FloatTerm
 Plug 'voldikss/vim-floaterm'
 " Vim-Repeat
@@ -56,7 +46,7 @@ Plug 'tpope/vim-repeat'
 Plug 'preservim/tagbar'
 " LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " For Go
@@ -65,22 +55,22 @@ Plug 'honza/vim-snippets'
 Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 " Fugitive
 Plug 'tpope/vim-fugitive'
-" SuperTab
-Plug 'ervandew/supertab'
 " cool icons, minimalist statusbar and tabs
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 " startify
 Plug 'mhinz/vim-startify'
-" To show git changes
+" Show Git changes
 Plug 'mhinz/vim-signify'
 
 call plug#end()
 
 lua require("lets_talk") 
 
+syntax on
 syntax enable
+
 set t_Co=256
 
 " set notermguicolors
