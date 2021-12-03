@@ -1,12 +1,14 @@
-" augroup remember_folds
+" AutoGroups
+
+" augroup Format_python
 "     autocmd!
-"     autocmd BufWinLeave * mkview
-"     autocmd BufWinEnter * silent! loadview
+"     autocmd BufWritePre *.py Neoformat
 " augroup END
 
 augroup Format_python
     autocmd!
-    autocmd BufWritePre *.py Neoformat
+    autocmd FileType python nnoremap <leader>f :Neoformat <cr>
+    autocmd FileType cpp nnoremap <leader>f :ClangFormat <cr>
 augroup END
 
 augroup Term_config

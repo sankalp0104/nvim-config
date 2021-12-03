@@ -19,8 +19,6 @@ set undofile
 set incsearch
 set scrolloff=8
 " set noshowmode
-" set cc=100
-set signcolumn=yes
 set isfname+=@-@
 " set ls=0
 
@@ -31,28 +29,15 @@ set cmdheight=1
 " delays and poor user experience.
 set updatetime=50
 
-" Don't pass messages to |ins-completion-menu|.
-" set shortmess+=c
-
-" Set completeopt to have a better completion experience
-" set completeopt=menuone,noinsert,noselect
-
 set path+=**
 set splitbelow splitright
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.out,*.pdf,*.png,*.jpg,*.jpeg
-" set autochdir
 
-" set cursorline
-" hi cursorline cterm=none term=none
-
-set signcolumn=no
+set signcolumn=auto
 set lazyredraw
 highlight Comment cterm=italic gui=italic
 
 set showtabline=2
+
+" set cc=100
 " set t_md=
-
-
-" hi Search ctermbg=blue
-" hi Search cterm=NONE ctermfg=grey ctermbg=blue
-"

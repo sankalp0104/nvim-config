@@ -6,63 +6,57 @@ filetype plugin on
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
 
-" UndoTree
 Plug 'mbbill/undotree'
-" Move Lines up and down
 Plug 'matze/vim-move'
-" Format c++ codes
 Plug 'rhysd/vim-clang-format'
-" Format python codes
 Plug 'sbdchd/neoformat'
-" Match Brackets
 Plug 'jiangmiao/auto-pairs'
-" Life saving plugin for surrounding
 Plug 'tpope/vim-surround'
-" For Comments
 Plug 'tomtom/tcomment_vim'
-" Maximizer
 Plug 'szw/vim-maximizer'
-" Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-" Cheat Sheet
 Plug 'dbeniamine/cheat.sh-vim'
-" Colors
+
+" COLORS
 Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-" Tree-sitter
+Plug 'chiendo97/intellij.vim'
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-" Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-"FloatTerm
 Plug 'voldikss/vim-floaterm'
-" Vim-Repeat
 Plug 'tpope/vim-repeat'
-" Vim Tagbar
 Plug 'preservim/tagbar'
-" LSP
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" For Go
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Minimap like vs-code or sublime
-Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
-" Fugitive
 Plug 'tpope/vim-fugitive'
-" cool icons, minimalist statusbar and tabs
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
-" startify
 Plug 'mhinz/vim-startify'
-" Show Git changes
-Plug 'mhinz/vim-signify'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'chrisbra/unicode.vim'
+Plug 'ap/vim-css-color'
+Plug 'preservim/nerdtree'
+Plug 'alvarosevilla95/luatab.nvim'
+
+"completion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'tamago324/cmp-zsh'
+Plug 'onsails/lspkind-nvim'
 
 call plug#end()
 
@@ -82,9 +76,13 @@ set t_Co=256
 set termguicolors
 colorscheme dracula
 
+" set termguicolors
+" set background=light
+" colorscheme intellij
+
+
 source ~/.config/nvim/sets.vim
 source ~/.config/nvim/lets.vim
 source ~/.config/nvim/maps.vim
 source ~/.config/nvim/autoGroups.vim
-source ~/.config/nvim/plug-config/lspConfig.vim
 source ~/.config/nvim/plug-config/telescope.vim
