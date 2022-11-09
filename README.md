@@ -1,2 +1,2 @@
 # nvim-config
-As the name says
+Just what it is called.
